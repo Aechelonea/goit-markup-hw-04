@@ -82,10 +82,12 @@ main {
 
 .contact {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .phone {
-  margin-left: 50px;
   margin-right: 12px;
 }
 
@@ -119,19 +121,20 @@ main {
 
 .icon-envelope,
 .icon-smartphone {
-  justify-content: center;
   fill: currentColor;
-  width: 20px;
-  height: 16px;
 }
 
-.navigation-list a:hover,
-.navigation-list a:focus,
-.e-mail:hover,
-.e-mail:focus,
-.phone:hover,
-.phone:focus {
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.contact a:hover,
+.contact a:focus {
+  fill: var(--main-color);
   color: var(--main-color);
+  cursor: pointer;
 }
 
 /* ====== end header ====== */
@@ -142,10 +145,8 @@ main {
   background-color: var(--dark-background-color);
   padding: 200px 0px 200px 0px;
   width: 100%;
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)),
     url("/images/Img.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -200,9 +201,10 @@ main {
   background-color: var(--main-color);
 }
 
-.button-portfolio:hover {
+.button-portfolio:hover, .button-portfolio:focus {
   color: #ffffff;
   background-color: var(--main-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .showcase-menu {
@@ -238,7 +240,6 @@ main {
 
 .descriptions li {
   width: 270px;
-  height: 96px;
   padding-top: 24px;
 }
 
@@ -259,6 +260,17 @@ main {
   letter-spacing: 0.03em;
   color: var(--text-color);
   margin: 0px;
+}
+
+.description-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--button-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
 
 .what-we-do {
@@ -300,7 +312,7 @@ main {
   border: 0px;
 }
 
-.team-description > li {
+.team-description>li {
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -322,9 +334,6 @@ main {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--text-color);
-}
-
-.social-media-item {
 }
 
 .social-media-list {
@@ -357,6 +366,55 @@ main {
   fill: currentColor;
   text-decoration: none;
 }
+
+.our-clients {
+  width: 100%;
+  min-height: 184px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.our-clients h2 {
+  margin-bottom: 50px;
+}
+
+.our-clients-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1170px;
+  gap: 30px;
+  margin: 0;
+}
+
+.our-clients-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.clients-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.clients-icon {
+  fill: currentColor;
+}
+
+.clients-icon:hover {
+  fill: var(--main-color)
+}
+
+/* ========= portfolio ========= */
 
 .portfolio-showcase {
   display: flex;
@@ -393,6 +451,7 @@ main {
 
 .portfolio-description li:hover {
   cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-description h5 {
@@ -420,7 +479,7 @@ main {
 
 .footer {
   width: 100%;
-  height: 252px;
+  min-height: 252px;
   background-color: var(--dark-background-color);
   display: flex;
   justify-content: center;
@@ -428,13 +487,13 @@ main {
 
 .footer .container {
   width: 1200px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  flex-direction: column;
-  gap: 20px;
+  padding-top: 62px;
 }
 
 .address-footer {
+  margin-right: 70px;
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -442,7 +501,11 @@ main {
 
 .address-footer p,
 .address-footer address {
-  margin: 0px;
+  margin: 0;
+}
+
+.address-footer>.logo {
+  margin-bottom: 11px;
 }
 
 .phone-footer {
@@ -469,6 +532,31 @@ address,
 .phone-footer:hover,
 .phone-footer:focus {
   color: var(--main-color);
+}
+
+.socials-footer>p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.socials-footer>.social-media-list {
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.socials-footer .social-media-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.socials-footer .social-media-link:hover {
+  background-color: var(--main-color);
 }
 
 /* ===== end footer ===== */
