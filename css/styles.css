@@ -149,7 +149,7 @@ main {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("images/img.jpg");
+    url("../images/img.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
