@@ -144,7 +144,7 @@ main {
 .box {
   background-color: var(--dark-background-color);
   padding: 200px 0px 200px 0px;
-  width: 100%;
+  width: 1600px;
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
@@ -153,6 +153,8 @@ main {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  display: flex;
+  justify-content: center;
 }
 
 .box h1 {
